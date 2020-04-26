@@ -1,0 +1,49 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #562212;
+    padding: 0 50px;
+
+    svg{
+        color: #ddd; 
+    }
+
+    .headerLeft{ 
+        width: 1000px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        img{
+            width: 50px;
+        }
+        svg{
+            color: #ddd; 
+        }
+        a{ 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 50px;
+            color: #ddd; 
+            text-decoration: none;
+            margin-right: 40px;
+            p{ 
+                margin-top: 30px; 
+                text-align: right;
+                line-height: 17px;
+                font-size: 20px;
+                font-weight: 900; 
+                span{
+                    display: block;
+                    text-align: right;
+                    font-size: 15px;
+                    font-family: 'Montserrat Alternates', sans-serif;
+                }
+            }
+        }
+        .search{ 
+            width: 40%; 
+        }
+    }
+} 
