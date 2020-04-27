@@ -1,11 +1,14 @@
 .sidebar{ 
-    width: 300px; 
+    width: 250px; 
+    background-color: #fff;
+    height: 100%;
     a{ 
         font-size: 20px;
         color: rgb(87, 87, 87);
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: center;  
+        border-bottom: 1px solid #ddd;
 
         span{
             svg:nth-child(1){
@@ -16,19 +19,15 @@
             }
         }
         &:hover{
-            color: coral;
+            color: #ed5338; 
         }
         &:last-child{
-            border: none;
+            border-bottom: none;
         } 
-        &:nth-child(2n){
-            background-color: #ddd;
-        }
-        &:nth-child(2n+1){
-            background-color: #fff;
-        }
     } 
     .active{
+        border-left: 3px solid #ed5338;
         color: #ed5338 !important;
+        background-color: rgb(252, 252, 252);
     }
 }

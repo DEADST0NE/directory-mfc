@@ -6,19 +6,18 @@ import Sidebar from '../../сomponent/Sidebar';
 import Employees from '../../pages/Employees/';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import EmployeesAccount from '../../pages/EmployeesAccount';
 import s from './App.module.scss'
 const App = () => {
   return (
     <>
       <BrowserRouter>
         <Header /> 
-        <Route path="/" component={() => {
-          return (<div className={s.conteiner}>
-                    <Sidebar />
-                    <Employees />
-                  </div>)
-        }}/>
-        
+          <div className={s.conteiner}>
+            <Sidebar />
+            <Route exact path="/" component={ () => <Employees/> }/>
+            <Route path="/EmployeesAccount" component={ (props) => <EmployeesAccount {...props}/> }/>
+          </div> 
       </BrowserRouter>
     </>
   );

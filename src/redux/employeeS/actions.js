@@ -31,3 +31,14 @@ export const getEmployees = () => (dispatch) => {
 };
 //--
 
+//Запрос на добавление сотрудника
+const postEmployeesRequest = async (object) => {
+    return await axios.post(`Employees`, object) 
+};
+
+export const postEmployee = (object) => (dispatch) => {
+    postEmployeesRequest(object);
+    dispatch(getEmployees());
+};
+//--
+

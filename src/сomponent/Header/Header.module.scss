@@ -47,3 +47,10 @@
         }
     }
 } 
+.globalSearch{
+    background: rgba(197, 197, 197, 0.28) !important;
+    border: none !important; 
+    &:focus{
+        background-color: #fff !important;
+    }
+}

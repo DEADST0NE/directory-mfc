@@ -4,17 +4,17 @@ import { reducer as formReducer } from 'redux-form';
 import reducerJobPosition from './jobPosition/reduser';
 import reducerJobSalaries from './jobSalaries/reduser'; 
 import reducerOffices from './offices/reduser';
-import reducerEmployees from './employeeS/reduser';
-import reducerFileFoto from './file/reduser';
-import reducerEmployee from './employee/reduser';
+import reducerEmployees from './employees/reduser';
+import reducerFileFoto from './file/reduser'; 
+import reducerEmployeeAccountData from './employeesAccountData/reduser';
 
 const rootReducers = combineReducers({ 
     jobPosition: reducerJobPosition,
     jobSalaries: reducerJobSalaries,
     offices: reducerOffices,
-    employeeS: reducerEmployees,
-    employee: reducerEmployee,
+    employees: reducerEmployees, 
     fotoFile: reducerFileFoto,
+    employeesAccountData: reducerEmployeeAccountData,
     form: formReducer
 });
 

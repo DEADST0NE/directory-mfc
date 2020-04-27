@@ -20,7 +20,7 @@ const Header = () =>{
                 
                 <Button variant="primary"><FontAwesomeIcon icon={ faHeadset } /> Консультация</Button>
                 <div className={s.search}>
-                    <Form.Control type="text" placeholder="Поиск" />
+                    <Form.Control type="text" className={s.globalSearch} placeholder="Поиск" />
                 </div>
                 
             </div>

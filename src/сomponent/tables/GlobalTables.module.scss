@@ -9,6 +9,13 @@
         border: 1px solid;
         text-align: center;
         font-size: 20px;
+        a{
+            color: black;
+            &:hover{
+                color: red;
+                text-decoration: none;
+            }
+        }
     }
     thead{
         td{

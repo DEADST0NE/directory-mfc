@@ -5,20 +5,14 @@ import { Field, reduxForm } from 'redux-form';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { connect } from 'react-redux'; 
-//import Spiner from '../../../../сomponent/';
+
 import FormFileUpload from '../../../../components/FormFileUpload';
 import { Input, PhoneInput, InputDatePicker, SnilsInput, InnInput } from '../../../../components/FormControls/FormControls';
 import { required } from '../../../../utils/validators';
 import s from '../../GlobalForm.module.scss';
 
-let PutEmployeesForm = ({ handleSubmit, onClose, loadingStatus, errorStatus }) => {
+let PutEmployeesForm = ({ handleSubmit, onClose }) => {
 
-    if(loadingStatus){
-        return 'Загрузка ...'
-    }
-    if(errorStatus){
-        return 'Ошибка ...'
-    } 
     return (   
             <Form onSubmit={ handleSubmit } className={s.forms}>
                 <Modal.Body>
@@ -42,7 +36,7 @@ let PutEmployeesForm = ({ handleSubmit, onClose, loadingStatus, errorStatus }) =
                                 <Form.Label> Фамилия </Form.Label>
                             </Col>
                             <Col sm="6">
-                                <Field  validate={required} type="text" placeholder="Фамилия" name='Fio.LastName' component={Input}/> 
+                                <Field  validate={required} type="text" placeholder="Фамилия" name='fio.lastName' component={Input}/> 
                             </Col>
                         </Form.Row>
                     </Form.Group> 
@@ -53,7 +47,7 @@ let PutEmployeesForm = ({ handleSubmit, onClose, loadingStatus, errorStatus }) =
                                 <Form.Label> Имя </Form.Label>
                             </Col>
                             <Col sm="6">
-                                <Field validate={required} type="text" placeholder="Имя" name='Fio.Name' component={Input}/> 
+                                <Field validate={required} type="text" placeholder="Имя" name='fio.name' component={Input}/> 
                             </Col>
                         </Form.Row>
                     </Form.Group>  
@@ -64,7 +58,7 @@ let PutEmployeesForm = ({ handleSubmit, onClose, loadingStatus, errorStatus }) =
                                 <Form.Label> Отчество </Form.Label>
                             </Col>
                             <Col sm="6">
-                                <Field type="text" placeholder="Отчество" name='Fio.MiddleName' component={Input}/> 
+                                <Field type="text" placeholder="Отчество" name='fio.middleName' component={Input}/> 
                             </Col>
                         </Form.Row>
                     </Form.Group>
@@ -75,7 +69,7 @@ let PutEmployeesForm = ({ handleSubmit, onClose, loadingStatus, errorStatus }) =
                                 <Form.Label> Дата рождения </Form.Label>
                             </Col>
                             <Col sm="6">
-                                <Field className='form-control' placeholder="Дата рождения" name='Passport.BirthDate' component={InputDatePicker}/> 
+                                <Field className='form-control' placeholder="Дата рождения" name='passport.birthDate' component={InputDatePicker}/> 
                             </Col>
                         </Form.Row>
                     </Form.Group>
@@ -86,7 +80,7 @@ let PutEmployeesForm = ({ handleSubmit, onClose, loadingStatus, errorStatus }) =
                                 <Form.Label> Место рождения </Form.Label>
                             </Col>
                             <Col sm="6">
-                                <Field type="text" placeholder="Место рождения" name='Passport.BirthPlace' component={Input}/> 
+                                <Field type="text" placeholder="Место рождения" name='passport.birthPlace' component={Input}/> 
                             </Col>
                         </Form.Row>
                     </Form.Group>
@@ -100,7 +94,7 @@ let PutEmployeesForm = ({ handleSubmit, onClose, loadingStatus, errorStatus }) =
                                 <Form.Label> Номер телефона </Form.Label>
                             </Col>
                             <Col sm="6">
-                                <Field type="text" className='form-control' placeholder="Номер телефона" name='PhoneNumber' component={PhoneInput}/> 
+                                <Field type="text" className='form-control' placeholder="Номер телефона" name='phoneNumber' component={PhoneInput}/> 
                             </Col>
                         </Form.Row>
                     </Form.Group>
@@ -111,7 +105,7 @@ let PutEmployeesForm = ({ handleSubmit, onClose, loadingStatus, errorStatus }) =
                                 <Form.Label> Адрес электронной почты </Form.Label>
                             </Col>
                             <Col sm="6">
-                                <Field type="text" placeholder="Адрес электронной почты" name='Email' component={Input}/> 
+                                <Field type="text" placeholder="Адрес электронной почты" name='email' component={Input}/> 
                             </Col>
                         </Form.Row>
                     </Form.Group> 
@@ -125,7 +119,7 @@ let PutEmployeesForm = ({ handleSubmit, onClose, loadingStatus, errorStatus }) =
                                 <Form.Label> Серия </Form.Label>
                             </Col>
                             <Col sm="6">
-                                <Field type="text" placeholder="Серия" name='Passport.Serial' component={Input}/> 
+                                <Field type="text" placeholder="Серия" name='passport.serial' component={Input}/> 
                             </Col>
                         </Form.Row>
                     </Form.Group>
@@ -136,7 +130,7 @@ let PutEmployeesForm = ({ handleSubmit, onClose, loadingStatus, errorStatus }) =
                                 <Form.Label> Номер </Form.Label>
                             </Col>
                             <Col sm="6">
-                                <Field type="text" placeholder="Номер" name='Passport.Number' component={Input}/> 
+                                <Field type="text" placeholder="Номер" name='passport.number' component={Input}/> 
                             </Col>
                         </Form.Row>
                     </Form.Group>
@@ -147,7 +141,7 @@ let PutEmployeesForm = ({ handleSubmit, onClose, loadingStatus, errorStatus }) =
                                 <Form.Label> Дата выдачи </Form.Label>
                             </Col>
                             <Col sm="6">
-                                <Field className='form-control' placeholder="Дата выдачи" name='Passport.Number' component={InputDatePicker}/> 
+                                <Field className='form-control' placeholder="Дата выдачи" name='passport.number' component={InputDatePicker}/> 
                             </Col>
                         </Form.Row>
                     </Form.Group>
@@ -158,7 +152,7 @@ let PutEmployeesForm = ({ handleSubmit, onClose, loadingStatus, errorStatus }) =
                                 <Form.Label> Место выдачи паспорта </Form.Label>
                             </Col>
                             <Col sm="6">
-                                <Field type="text" placeholder="Место выдачи паспорта" name='Passport.IssuePlace' component={Input}/> 
+                                <Field type="text" placeholder="Место выдачи паспорта" name='passport.issuePlace' component={Input}/> 
                             </Col>
                         </Form.Row>
                     </Form.Group>
@@ -169,7 +163,7 @@ let PutEmployeesForm = ({ handleSubmit, onClose, loadingStatus, errorStatus }) =
                                 <Form.Label> Код документа </Form.Label>
                             </Col>
                             <Col sm="6">
-                                <Field type="text" placeholder="Код документа" name='Passport.Code' component={Input}/> 
+                                <Field type="text" placeholder="Код документа" name='passport.code' component={Input}/> 
                             </Col>
                         </Form.Row>
                     </Form.Group>
@@ -183,7 +177,7 @@ let PutEmployeesForm = ({ handleSubmit, onClose, loadingStatus, errorStatus }) =
                                 <Form.Label> СНИЛС </Form.Label>
                             </Col>
                             <Col sm="6">
-                                <Field type="text" className='form-control' placeholder="СНИЛС" name='Snils' component={SnilsInput}/> 
+                                <Field type="text" className='form-control' placeholder="СНИЛС" name='snils' component={SnilsInput}/> 
                             </Col>
                         </Form.Row>
                     </Form.Group>
@@ -194,7 +188,7 @@ let PutEmployeesForm = ({ handleSubmit, onClose, loadingStatus, errorStatus }) =
                                 <Form.Label> ИНН </Form.Label>
                             </Col>
                             <Col sm="6">
-                                <Field type="text" className='form-control' placeholder="ИНН" name='Inn' component={InnInput}/> 
+                                <Field type="text" className='form-control' placeholder="ИНН" name='inn' component={InnInput}/> 
                             </Col>
                         </Form.Row>
                     </Form.Group>
@@ -208,7 +202,7 @@ let PutEmployeesForm = ({ handleSubmit, onClose, loadingStatus, errorStatus }) =
                                 <Form.Label> Табельный номер </Form.Label>
                             </Col>
                             <Col sm="6">
-                                <Field type="text" placeholder="Табельный номер" name='PersonalNumber' component={Input}/> 
+                                <Field type="text" placeholder="Табельный номер" name='personalNumber' component={Input}/> 
                             </Col>
                         </Form.Row>
                     </Form.Group>
@@ -219,7 +213,7 @@ let PutEmployeesForm = ({ handleSubmit, onClose, loadingStatus, errorStatus }) =
                                 <Form.Label> Серийный номер ЭЦП сертификата </Form.Label>
                             </Col>
                             <Col sm="6">
-                                <Field type="text" placeholder="Серийный номер ЭЦП сертификата" name='CertificateNumber' component={Input}/> 
+                                <Field type="text" placeholder="Серийный номер ЭЦП сертификата" name='certificateNumber' component={Input}/> 
                             </Col>
                         </Form.Row>
                     </Form.Group>
@@ -230,7 +224,7 @@ let PutEmployeesForm = ({ handleSubmit, onClose, loadingStatus, errorStatus }) =
                                 <Form.Label> Пароль для в входа в АИС </Form.Label>
                             </Col>
                             <Col sm="6">
-                                <Field type="text" placeholder="Пароль для в входа в АИС" name='Password' component={Input}/> 
+                                <Field type="text" placeholder="Пароль для в входа в АИС" name='password' component={Input}/> 
                             </Col>
                         </Form.Row>
                     </Form.Group>
@@ -241,7 +235,7 @@ let PutEmployeesForm = ({ handleSubmit, onClose, loadingStatus, errorStatus }) =
                                 <Form.Label> Подсказка к паролю </Form.Label>
                             </Col>
                             <Col sm="6">
-                                <Field type="text" placeholder="Подсказка к паролю" name='PasswordHelp' component={Input}/> 
+                                <Field type="text" placeholder="Подсказка к паролю" name='passwordHelp' component={Input}/> 
                             </Col>
                         </Form.Row>
                     </Form.Group>
@@ -263,7 +257,7 @@ PutEmployeesForm = reduxForm({
 
 PutEmployeesForm = connect(
     state => ({
-        initialValues:  state.employee.data
+        initialValues: state.employeesAccountData.data
     }),               
 )(PutEmployeesForm)
 

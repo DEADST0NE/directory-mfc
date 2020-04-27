@@ -1,7 +1,7 @@
 import {
-    EMPLOYEE_REQUEST,
-    EMPLOYEE_SUCCESS,
-    EMPLOYEE_ERROR
+    EMPLOYEES_ACCOUNT_DATA_REQUEST,
+    EMPLOYEES_ACCOUNT_DATA_SUCCESS,
+    EMPLOYEES_ACCOUNT_DATA_ERROR
 } from '../constActions';
 
 const initialState = {
@@ -9,22 +9,22 @@ const initialState = {
     loading: true,
     error: false
 } 
-const reducerEmployee = (state = initialState, action) => {
+const reducerEmployeeAccountData = (state = initialState, action) => {
     switch(action.type){
-        case EMPLOYEE_REQUEST:
+        case EMPLOYEES_ACCOUNT_DATA_REQUEST:
             return {
                 ...state,
                 loading: true,
                 error: false
             }
-        case EMPLOYEE_SUCCESS: 
+        case EMPLOYEES_ACCOUNT_DATA_SUCCESS: 
             return {
                 ...state,
                 data: action.payload,
                 loading: false,
                 error: false
             } 
-        case EMPLOYEE_ERROR: 
+        case EMPLOYEES_ACCOUNT_DATA_ERROR: 
             return {
                 ...state,
                 loading: false,
@@ -35,5 +35,5 @@ const reducerEmployee = (state = initialState, action) => {
     }
 }
 
-export default reducerEmployee;
+export default reducerEmployeeAccountData;
 

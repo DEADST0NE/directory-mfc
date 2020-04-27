@@ -3,7 +3,7 @@ import React from 'react';
 //import {connect} from 'react-redux'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFilter, faPlay, faPause, faEye, faTrash } from '@fortawesome/free-solid-svg-icons';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 //import ModalWindow from '../../../сomponent/ModalWindow';
 import StatusImg from '../../../img/StatusImg';
@@ -26,8 +26,7 @@ const TablesEmployees = ({ object, loading, error, putEmployee, getEmployee, fot
     //    getEmployee(id);
     //    setputIdEmployee(id);
     //    setShowModalPutEmployee(true);
-    //}
-
+    //} 
     return (
         <>
             <table className={s.tableEmployees}> 
@@ -52,7 +51,12 @@ const TablesEmployees = ({ object, loading, error, putEmployee, getEmployee, fot
                                 <td>{ item.employeeIsActiv ? <FontAwesomeIcon icon={ faPlay } color='green'/> 
                                                             : <FontAwesomeIcon icon={ faPause } color='red'/> }</td>
                                 <td>
-                                    <NavLink to='/UserAccount'> <FontAwesomeIcon icon={ faEye } /> </NavLink> 
+                                    <Link  to={{
+                                        pathname: '/EmployeesAccount',
+                                        state: { id: item.employeeId }
+                                    }}> 
+                                        <FontAwesomeIcon icon={ faEye } /> 
+                                    </Link> 
                                     <FontAwesomeIcon icon={ faTrash } />
                                 </td> 
                             </tr>  
